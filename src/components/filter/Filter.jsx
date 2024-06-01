@@ -1,11 +1,17 @@
 import React, { useContext } from 'react'
 import myContext from '../../context/data/myContext'
-
+import { useNavigate } from 'react-router-dom';
 function Filter() {
     const context = useContext(myContext)
     const { mode,searchkey, setSearchkey,filterType, setFilterType,
         filterPrice, setFilterPrice ,product} = context
 
+        const handleReset = () => {
+            setSearchkey('');
+            setFilterType('');
+            setFilterPrice('');
+            navigate('/allProducts'); 
+        };
     return (
         <div>
            <div className=' container mx-auto px-4 mt-5 '>
@@ -33,7 +39,7 @@ function Filter() {
                         <p className="font-medium">
                             Filters
                         </p>
-                        <button className="px-4 py-2 bg-gray-50hover:bg-gray-200 text-gray-800 text-sm font-medium rounded-md" style={{ color: mode === 'dark' ? 'white' : '' }}>
+                        <button onClick={handleReset}   className="px-4 py-2 bg-gray-50hover:bg-gray-200 text-gray-800 text-sm font-medium rounded-md" style={{ color: mode === 'dark' ? 'white' : '' }}>
                             Reset Filter
                         </button>
                     </div>
