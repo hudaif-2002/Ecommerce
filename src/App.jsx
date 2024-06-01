@@ -38,7 +38,7 @@ function App() {
         <Route path="/addproduct" element={<ProtectedRoutesForAdmin><AddProduct /></ProtectedRoutesForAdmin>} />
         <Route path="/updateproduct" element={<ProtectedRoutesForAdmin><UpdateProduct /></ProtectedRoutesForAdmin>} />
 
-\
+
         <Route path="/*" element={<NoPage/>} />
       </Routes>
       <ToastContainer/>

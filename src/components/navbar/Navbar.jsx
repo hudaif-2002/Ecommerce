@@ -7,6 +7,7 @@ import myContext from "../../context/data/myContext";
 import { RxCross2 } from "react-icons/rx";
 import { useSelector } from "react-redux";
 
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
